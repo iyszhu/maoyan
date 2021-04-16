@@ -1,29 +1,35 @@
 <template>
-  <div class="">
+  <div class="home-warp">
     <header>狗眼电影</header>
     <router-view></router-view>
     <nav class="tabBar">
-      <ul>
-        <router-link to="/home/movies" tag="li" active-class="active">
-          <b class="movie-ico">&#xe8ae;</b>
+      <van-tabbar v-model="active" active-color="#cd4c42" inactive-color="#666" route>
+        <van-tabbar-item badge="3" to="/home/movies/hot">
           <span>电影</span>
-        </router-link>
-        <router-link to="/home/theaters" tag="li" active-class="active">
-          <b class="movie-ico">&#xe8c0;</b>
+          <template #icon="props">
+            <van-icon class-prefix="iconfont-nav" name="movie" />
+          </template>
+        </van-tabbar-item>
+        <van-tabbar-item to="/home/theaters">
           <span>影院</span>
-        </router-link>
-        <router-link to="/home/profile" tag="li" active-class="active">
-          <b class="movie-ico">&#xe8bb;</b>
+          <template #icon="props">
+            <van-icon class-prefix="iconfont-nav" name="theaters" />
+          </template>
+        </van-tabbar-item>
+        <van-tabbar-item to="/home/profile">
           <span>我的</span>
-        </router-link>
-      </ul>
+          <template #icon="props">
+            <van-icon class-prefix="iconfont-nav" name="profile" />
+          </template>
+        </van-tabbar-item>
+      </van-tabbar>
     </nav>
   </div>
 </template>
 
 <style lang="stylus" scoped>
 @import "~@/assets/stylus/icon.styl"
-div
+.home-warp
   display flex
   flex-direction column
   height: 100%
@@ -43,40 +49,24 @@ div
       font-family iconfont-nav
   .tabBar
     height .44rem
-    border1px(1px 0 0 0)
-    ul
-      display flex
-      li
-        flex 1
-        display flex
-        flex-direction column
-        justify-content center
-        align-items center
-        padding-top .04rem
-        color #999
-        b
-          font-size .26rem
-          font-weight normal
-          line-height .2rem
-        span
-          font-size: .12rem;
-          transform scale(0.9)
-        &.active
-          color #cd4c42
 
 
 </style>
 
 <script>
-// @ is an alias to /src
-import MovieList from '@/components/MovieList'
-import Movies from "@/views/home/movies/Movies";
+import Vue from 'vue'
+import { Button, Tabbar, TabbarItem, Icon } from 'vant'
+Vue.use(Button)
+Vue.use(Tabbar)
+Vue.use(TabbarItem)
+Vue.use(Icon)
 
 export default {
   name: 'Home',
-  components: {
-    MovieList,
-    Movies
+  data() {
+    return {
+      active: 0
+    }
   }
 }
 </script>

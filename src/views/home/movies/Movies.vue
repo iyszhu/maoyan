@@ -7,7 +7,7 @@
           <b class="yo-ico">&#xf033</b>
         </li>
         <li>
-          <router-link tag="span" active-class="active" to="/home/movies/theaters">热映</router-link>
+          <router-link tag="span" active-class="active" to="/home/movies/hot">热映</router-link>
           <router-link tag="span" active-class="active" to="/home/movies/comingSoon">待映</router-link>
         </li>
         <li class="movie-ico">
@@ -37,7 +37,6 @@ export default {
       }
     })
     this.movieList = res.data.hot
-    console.log(res.data.hot)
   },
   methods: {
     handleCity() {

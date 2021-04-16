@@ -1,6 +1,6 @@
 <template>
   <div>
-    Theaters
+    <van-button>1</van-button>
   </div>
 </template>
 

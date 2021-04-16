@@ -19,12 +19,12 @@ const routes = [
         path: 'movies',
         name: 'movies',
         component: () => import('@/views/home/movies/Movies'),
-        redirect: '/home/movies/theaters',
+        redirect: '/home/movies/hot',
         children: [
           {
-            path: 'theaters',
-            name: 'theaters',
-            component: () => import('@/views/home/movies/Theaters')
+            path: 'hot',
+            name: 'hot',
+            component: () => import('@/views/home/movies/Hot')
           },
           {
             path: 'comingSoon',
