@@ -1,21 +1,21 @@
 <template>
   <div class="">
     <header>狗眼电影</header>
-    <Movies></Movies>
+    <router-view></router-view>
     <nav class="tabBar">
       <ul>
-        <li class="active movie-ico">
-          <b>&#xe8ae;</b>
+        <router-link to="/home/movies" tag="li" active-class="active">
+          <b class="movie-ico">&#xe8ae;</b>
           <span>电影</span>
-        </li>
-        <li class="movie-ico">
-          <b>&#xe8c0;</b>
+        </router-link>
+        <router-link to="/home/theaters" tag="li" active-class="active">
+          <b class="movie-ico">&#xe8c0;</b>
           <span>影院</span>
-        </li>
-        <li class="movie-ico">
-          <b>&#xe8bb;</b>
+        </router-link>
+        <router-link to="/home/profile" tag="li" active-class="active">
+          <b class="movie-ico">&#xe8bb;</b>
           <span>我的</span>
-        </li>
+        </router-link>
       </ul>
     </nav>
   </div>
@@ -62,7 +62,7 @@ div
           font-size: .12rem;
           transform scale(0.9)
         &.active
-          color cd4c42
+          color #cd4c42
 
 
 </style>

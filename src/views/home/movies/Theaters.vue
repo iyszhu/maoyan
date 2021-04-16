@@ -6,9 +6,8 @@
 
 <script>
 import MovieList from "@/components/MovieList";
-
 export default {
-  name: "ComingSoon",
+  name: "Theaters",
   props: {
     movieList: {
       type: Array
@@ -17,9 +16,9 @@ export default {
   components: {
     MovieList
   },
+
 }
 </script>
 
-<style scoped>
-
+<style lang="stylus" scoped>
 </style>

@@ -7,9 +7,48 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    redirect: '/home'
+  },
+  {
+    path: '/home',
     name: 'Home',
-    component: Home
-    // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: Home,
+    redirect: '/home/movies',
+    children: [
+      {
+        path: 'movies',
+        name: 'movies',
+        component: () => import('@/views/home/movies/Movies'),
+        redirect: '/home/movies/theaters',
+        children: [
+          {
+            path: 'theaters',
+            name: 'theaters',
+            component: () => import('@/views/home/movies/Theaters')
+          },
+          {
+            path: 'comingSoon',
+            name: 'comingSoon',
+            component: () => import('@/views/home/movies/ComingSoon')
+          }
+        ]
+      },
+      {
+        path: 'theaters',
+        name: 'theaters',
+        component: () => import('@/views/home/theaters/Theaters')
+      },
+      {
+        path: 'profile',
+        name: 'profile',
+        component: () => import('@/views/home/profile/Profile')
+      }
+    ]
+  },
+  {
+    path: '/city',
+    name: 'city',
+    component: () => import('../views/city/CityPicker')
   }
 ]
 

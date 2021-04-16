@@ -4,7 +4,7 @@ border1px(width=1px, color=#CCC, style=solid, radius=0)
     border-width 0
   border-radius radius
   &::after
-    // 解决边框 layer 覆盖内容
+    // 解决边框 layer 覆盖内容 导致的元素无法点击事件
     pointer-events none
     position absolute
     top 0

@@ -2,28 +2,24 @@
   <main>
     <nav class="movie-nav">
       <ul>
-        <li>
+        <li @click="handleCity">
           <span>广州</span>
           <b class="yo-ico">&#xf033</b>
         </li>
         <li>
-          <span class="active">热映</span>
-          <span>待映</span>
+          <router-link tag="span" active-class="active" to="/home/movies/theaters">热映</router-link>
+          <router-link tag="span" active-class="active" to="/home/movies/comingSoon">待映</router-link>
         </li>
         <li class="movie-ico">
           <b>&#xe8b9;</b>
         </li>
       </ul>
     </nav>
-    <div class="movie_list">
-      <MovieList :movie-list="movieList"></MovieList>
-    </div>
+    <router-view :movie-list="movieList"></router-view>
   </main>
 </template>
 
 <script>
-import MovieList from "@/components/MovieList";
-import axios from 'axios'
 export default {
   name: "inTheaters",
   data() {
@@ -32,14 +28,6 @@ export default {
     }
   },
   async mounted() {
-    // let res = await axios.get('/mmdb/movie/v2/list/hot.json', {
-    //   params: {
-    //     limit: 10,
-    //     offset: 0,
-    //     ct: '北京'
-    //   }
-    // })
-
     let res = await this.$request.get({
       url: '/movie/v2/list/hot.json',
       params: {
@@ -51,8 +39,10 @@ export default {
     this.movieList = res.data.hot
     console.log(res.data.hot)
   },
-  components: {
-    MovieList
+  methods: {
+    handleCity() {
+      this.$router.push('/city')
+    }
   }
 }
 </script>

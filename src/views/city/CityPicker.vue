@@ -1,12 +1,13 @@
 <template>
-
+  <div>111</div>
 </template>
 
 <script>
 export default {
-  name: "inTheaters"
+name: "CityPicker"
 }
 </script>
 
-<style lang="stylus" scoped>
+<style scoped>
+
 </style>

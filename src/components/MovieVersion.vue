@@ -21,7 +21,7 @@ export default {
       let arr = []
       let r = new RegExp('(2D|3D)', 'gi').exec(this.ver)
       r && arr.push('v' + r[0].toLowerCase())
-      new RegExp('中国巨幕', 'gi').exec(this.ver) && arr.push('imax')
+      new RegExp('(中国巨幕|IMAX)', 'gi').exec(this.ver) && arr.push('imax')
       return arr.join(' ')
     }
   }
