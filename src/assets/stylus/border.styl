@@ -1,0 +1,33 @@
+border1px(width=1px, color=#CCC, style=solid, radius=0)
+  position relative
+  if width == 0
+    border-width 0
+  border-radius radius
+  &::after
+    // 解决边框 layer 覆盖内容
+    pointer-events none
+    position absolute
+    top 0
+    left 0
+    z-index 999
+    content '\0020'
+    border-width width
+    border-color color
+    border-style style
+    // 设备像素比 device-pixel-ratio 以 iPhone 为参考 1.5 2.5是其临界点
+    @media (max--moz-device-pixel-ratio: 1.49),(-webkit-max-device-pixel-ratio: 1.49),(max-device-pixel-ratio: 1.49),(max-resolution: 143dpi),(max-resolution: 1.49dppx)
+      height: 100%
+      width: 100%
+      transform scale(1)
+      border-radius radius
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49),(-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49),(min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49),(min-resolution: 144dpi) and (max-resolution: 239dpi),(min-resolution: 1.5dppx) and (max-resolution: 2.49dppx)
+      height: 200%
+      width: 200%
+      transform scale(.5)
+      border-radius radius*2
+    @media (min--moz-device-pixel-ratio: 2.5),(-webki-min-device-pixel-ratio: 2.5),(min-device-pixel-ratio: 2.5),(min-resolution: 240dpi),(min-resolution: 2.5dppx)
+      height: 300%
+      width: 300%
+      transform scale(.3333)
+      border-radius radius*3
+    transform-origin 0 0
