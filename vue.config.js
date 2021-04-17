@@ -10,7 +10,18 @@ module.exports = {
       '/mmdb': {
         target: 'http://wx.maoyan.com',
         changeOrigin: true
+      },
+      '/ajax': {
+        target: 'https://m.maoyan.com',
+        changeOrigin: true
       }
+      // '/api': {
+      //   target: 'http:localhost:9090',
+      //   changeOrigin: true,
+      //   // pathRewrite: {
+      //   //   '^/api': ''
+      //   // }
+      // }
     }
   }
 }

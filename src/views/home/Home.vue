@@ -49,6 +49,7 @@
       font-family iconfont-nav
   .tabBar
     height .44rem
+    z-index 999
 
 
 </style>

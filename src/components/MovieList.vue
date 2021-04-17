@@ -6,7 +6,7 @@
 <!--        <img src="http://placehold.it/64x90" alt="">-->
       </div>
       <div>
-        <h2>{{ ml.nm }}<MovieVersion :ver="ml.ver" /> </h2>
+        <h2>{{ ml.nm }}<MovieVersion v-if="ml.ver" :ver="ml.ver" /> </h2>
         <p>{{ ml.cat }}</p>
         <p>{{ ml.desc }}</p>
         <div>{{ ml.showInfo }}</div>

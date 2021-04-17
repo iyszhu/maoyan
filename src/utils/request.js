@@ -3,7 +3,7 @@ import axios from 'axios'
 class request {
   constructor() {
     this.instance = axios.create({
-      baseURL: 'http://localhost:8080/mmdb',
+      baseURL: 'http://localhost:8080',
       timeout: 30000
     })
   }
@@ -12,7 +12,9 @@ class request {
     return new Promise((resolve, reject) => {
       this.instance.get(url, { params })
           .then(res => {
-            resolve(res.data)
+            setTimeout(()=>{
+              resolve(res.data)
+            }, 1000)
           })
           .catch(err => {
             reject(err)
