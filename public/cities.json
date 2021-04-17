@@ -1,0 +1,208 @@
+{
+  "hotCities": [
+    {
+      "id": "1",
+      "name": "北京",
+      "spell": "beijing"
+    },
+    {
+      "id": "2",
+      "name": "上海",
+      "spell": "shanghai"
+    },
+    {
+      "id": "3",
+      "name": "广州",
+      "spell": "guangzhou"
+    },
+    {
+      "id": "4",
+      "name": "深圳",
+      "spell": "shenzhen"
+    },
+    {
+      "id": "5",
+      "name": "杭州",
+      "spell": "hangzhou"
+    },
+    {
+      "id": "6",
+      "name": "重庆",
+      "spell": "chongqing"
+    }
+  ],
+  "cities": {
+    "A": [
+      {
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },
+      {
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },
+      {
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },
+      {
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },
+      {
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },
+      {
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },
+      {
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      }
+    ],
+    "B": [
+      {
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      }
+    ],
+    "C": [
+      {
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      }
+    ],
+    "D": [
+      {
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      }
+    ],
+    "E": [
+      {
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      }
+    ],
+    "F": [
+      {
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      },{
+        "id": 56,
+        "name": "阿坝",
+        "spell": "aba"
+      }
+    ]
+  }
+}

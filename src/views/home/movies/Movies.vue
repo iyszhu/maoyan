@@ -3,7 +3,7 @@
     <nav class="movie-nav">
       <ul>
         <li @click="handleCity">
-          <span>北京</span>
+          <span>{{ city.name }}</span>
           <b class="yo-ico">&#xf033</b>
         </li>
         <li>
@@ -45,6 +45,7 @@
 <script>
 import Vue from 'vue';
 import axios from 'axios'
+import { mapState } from 'vuex'
 import { List, PullRefresh, Skeleton } from 'vant';
 
 Vue.use(List).use(PullRefresh).use(Skeleton)
@@ -57,15 +58,16 @@ export default {
       loading: false,
       finished: false,
       skeleton: true,
-      url: '/mmdb/movie/v2/list/hot.json',
-      city: '北京',
-      ci: '1'
+      url: '/mmdb/movie/v2/list/hot.json'
     }
   },
   created() {
     this.hasMore = false
     this.limit = 10
     this.offset = 0
+  },
+  computed: {
+    ...mapState(['city'])
   },
   async mounted() {
     await this._loadData()
@@ -81,8 +83,8 @@ export default {
         params: {
           limit: this.limit,
           offset: this.offset,
-          ct: this.city,
-          ci: this.ci
+          ct: this.city.name,
+          ci: this.city.id
         }
       })
       let { hot, coming, paging: { hasMore } } = res.data
