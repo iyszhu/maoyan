@@ -32,6 +32,13 @@ export default {
 }
 </script>
 
+<!--<style lang="stylus" scoped>-->
+<!--.movie_list-->
+<!--  width: 100%-->
+<!--  position absolute-->
+<!--  top 0-->
+<!--</style>-->
+
 <style>
 .line-ellipsis {
   text-overflow: ellipsis;

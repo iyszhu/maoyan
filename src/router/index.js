@@ -24,6 +24,9 @@ const routes = [
           {
             path: 'hot',
             name: 'hot',
+            meta: {
+              index: 1
+            },
             component: () => import('@/views/home/movies/Hot')
           },
           {
@@ -48,6 +51,9 @@ const routes = [
   {
     path: '/city',
     name: 'city',
+    meta: {
+      index: 2
+    },
     component: () => import('../views/city/CityPicker')
   }
 ]

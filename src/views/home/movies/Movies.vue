@@ -1,45 +1,52 @@
 <template>
-  <main>
-    <nav class="movie-nav">
-      <ul>
-        <li @click="handleCity">
-          <span>{{ city.name }}</span>
-          <b class="yo-ico">&#xf033</b>
-        </li>
-        <li>
-          <router-link tag="span" active-class="active" to="/home/movies/hot">热映</router-link>
-          <router-link tag="span" active-class="active" to="/home/movies/comingSoon">待映</router-link>
-        </li>
-        <li class="movie-ico">
-          <b>&#xe8b9;</b>
-        </li>
-      </ul>
-    </nav>
-    <section class="movie-list">
-      <van-skeleton
-          class="skeleton"
-          title
-          avatar
-          avatar-shape="square"
-          avatar-size="0"
-          :row="3"
-          :loading="skeleton"
-          v-for="i in 7"
-          :key="'a'+i">
-      </van-skeleton>
-      <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
-        <van-list
-            v-model="loading"
-            :finished="finished"
-            finished-text="没有更多了"
-            @load="onLoad"
-            :immediate-check="false"
-        >
-          <router-view :movie-list="movieList"></router-view>
-        </van-list>
-      </van-pull-refresh>
-    </section>
-  </main>
+  <div class="movie-container">
+    <main>
+      <nav class="movie-nav">
+        <ul>
+          <li @click="handleCity">
+            <span>{{ city.name }}</span>
+            <b class="yo-ico">&#xf033</b>
+          </li>
+          <li>
+            <router-link tag="span" active-class="active" to="/home/movies/hot">热映</router-link>
+            <router-link tag="span" active-class="active" to="/home/movies/comingSoon">待映</router-link>
+          </li>
+          <li class="movie-ico">
+            <b>&#xe8b9;</b>
+          </li>
+        </ul>
+      </nav>
+      <section class="movie-list">
+        <van-skeleton
+            class="skeleton"
+            title
+            avatar
+            avatar-shape="square"
+            avatar-size="0"
+            :row="3"
+            :loading="skeleton"
+            v-for="i in 7"
+            :key="'a'+i">
+        </van-skeleton>
+        <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+          <van-list
+              v-model="loading"
+              :finished="finished"
+              finished-text="没有更多了"
+              @load="onLoad"
+              :immediate-check="false"
+          >
+            <transition
+                enter-active-class="animate__animated animate__slideInLeft"
+                leave-active-class="animate__animated animate__slideInRight"
+            >
+              <router-view :movie-list="movieList"></router-view>
+            </transition>
+          </van-list>
+        </van-pull-refresh>
+      </section>
+    </main>
+  </div>
 </template>
 
 <script>
@@ -135,58 +142,75 @@ export default {
 }
 </script>
 
+<!--<style lang="stylus">-->
+<!--.van-list-->
+<!--  position relative-->
+<!--</style>-->
+
 <style lang="stylus" scoped>
 @import "~@/assets/stylus/icon.styl"
-main
+.movie-container
   flex 1
   overflow hidden
-  display flex
-  flex-direction column
-  .movie-list
-    flex 1
-    overflow-y scroll
-    .skeleton
-      marg-top: .2rem;
-  .movie-nav
-    position static
-    > ul
-      border-bottom solid 1px #CCC
-      border1px(0 0 1px 0)
-      display flex
-      height .44rem
-      li:first-child
-        flex 100
+  position relative
+  main
+    position absolute
+    //top .44rem
+    width: 100%
+    height: 100%
+    display flex
+    flex-direction column
+    .movie-list
+      flex 1
+      overflow-y scroll
+      //position relative
+      .skeleton
+        marg-top: .2rem
+      //.van-pull-refresh
+      //  position absolute
+      //  width 100%
+      //  top 0
+
+    .movie-nav
+      position static
+      > ul
+        border-bottom solid 1px #CCC
+        border1px(0 0 1px 0)
         display flex
-        justify-content flex-start
-        align-items center
-        padding-left .15rem
-        color #666
-      li:nth-child(2)
-        flex 231
-        display flex
-        justify-content center
-        align-items center
-        span
-          display inline-block
-          height: .44rem
-          line-height: .44rem
+        height .44rem
+        li:first-child
+          flex 100
+          display flex
+          justify-content flex-start
+          align-items center
+          padding-left .15rem
           color #666
-          width .6rem
+        li:nth-child(2)
+          flex 231
+          display flex
+          justify-content center
+          align-items center
+          span
+            display inline-block
+            height: .44rem
+            line-height: .44rem
+            color #666
+            width .6rem
+            text-align center
+            &.active
+              color #cd4c42
+              border-bottom solid 2px #cd4c42
+            &:first-child
+              margin-right .3rem
+              margin-left -.35rem
+        li:last-child
+          flex 44
+          width: .44rem
+          border-left solid 1px #EEE
+          border1px(0 0 0 1px)
           text-align center
-          &.active
-            color #cd4c42
-            border-bottom solid 2px #cd4c42
-          &:first-child
-            margin-right .3rem
-            margin-left -.35rem
-      li:last-child
-        flex 44
-        width: .44rem
-        border-left solid 1px #EEE
-        border1px(0 0 0 1px)
-        text-align center
-        font-size 0.2rem
-        font-weight normal
-        line-height .44rem
-        color #cd4c42
+          font-size 0.2rem
+          font-weight normal
+          line-height .44rem
+          color #cd4c42
 </style>

@@ -1,7 +1,12 @@
 <template>
   <div class="home-warp">
     <header>狗眼电影</header>
-    <router-view></router-view>
+    <transition
+        enter-active-class="animate__animated animate__fadeIn"
+        leave-active-class="animate__animated animate__fadeOut"
+    >
+      <router-view></router-view>
+    </transition>
     <nav class="tabBar">
       <van-tabbar v-model="active" active-color="#cd4c42" inactive-color="#666" route>
         <van-tabbar-item badge="3" to="/home/movies/hot">
@@ -30,6 +35,7 @@
 <style lang="stylus" scoped>
 @import "~@/assets/stylus/icon.styl"
 .home-warp
+  position relative
   display flex
   flex-direction column
   height: 100%
